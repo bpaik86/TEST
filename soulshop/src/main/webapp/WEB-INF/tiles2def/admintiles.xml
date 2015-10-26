@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+	"http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+	
+<tiles-definitions>
+
+ <!--ADMIN 페이지 -->
+ <definition name="admin" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : ADMIN" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/admin/admin.jsp" />
+ </definition>
+ 
+ <!--ADMIN 상품등록 페이지 -->
+ <definition name="item_insert" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : ITEM_INSERT" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/admin/item_insert.jsp" />
+ </definition>
+ 
+ <!--ADMIN 상품 수정 페이지 -->
+ <definition name="item_modify" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : ITEM_MODIFY" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/admin/item_modify.jsp" />
+ </definition>
+ 
+ <!--ADMIN 상품 판매 통계 페이지 -->
+ <definition name="item_sales" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : ITEM_SALES" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/admin/item_sales.jsp" />
+ </definition>
+ 
+ <!--ADMIN 회원 관리 페이지 -->
+ <definition name="member_management" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : MEMBER_MANAGEMENT" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/admin/member_management.jsp" />
+ </definition>
+ 
+  <definition name="delivery_management" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : Delivery_Management" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/admin/delivery_management.jsp" />
+ </definition>
+ 
+</tiles-definitions>

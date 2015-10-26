@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.springframework.org/schema/beans"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+ 	
+ 	
+    
+    <mvc:interceptors>
+    	<mvc:interceptor>
+    		<mvc:mapping path="/admin.soul"/>
+    		<mvc:mapping path="/login.soul"/>
+    		<mvc:mapping path="/basket.soul"/>
+    		<mvc:mapping path="/mypage_modify.soul"/>
+    		<mvc:mapping path="/order_list.soul"/>
+    		<mvc:mapping path="/orderListView.soul"/>
+    		<bean class="soul.common.interceptor.SessionInterceptor" />
+    	</mvc:interceptor>
+    </mvc:interceptors>
+   
+   <mvc:annotation-driven >    
+       <mvc:argument-resolvers>
+			<bean class="soul.board.photo.CustomMapArgumentResolver"></bean>		
+		    <bean class="soul.common.resolver.CustomMapArgumentResolver"></bean>
+		</mvc:argument-resolvers>
+   
+   </mvc:annotation-driven>
+    
+    <mvc:resources location="/resources/**" mapping="/resources/"></mvc:resources>
+   	   
+   <bean class="soul.main.controller.MainController" >
+   		<property name="memberDao" ref="member1" />
+   	</bean>
+   	<bean id="member1" class="soul.main.dao.MemberDao">
+   		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+   	</bean> 
+   	
+   	<context:component-scan base-package="soul" >
+   		<context:exclude-filter type="regex" expression="soul\.main\..*"/>
+   	</context:component-scan>
+   	<context:component-scan base-package="soul.item" ></context:component-scan>
+   	
+   	
+   	<bean name="boardService" id="boardService" class="soul.board.service.BoardServiceImpl" />
+	
+   <bean name="boardDAO" id="boardDAO" class="soul.board.dao.BoardDAO" />
+	   
+   
+   <bean name="boardService2" id="boardService2" class="soul.board.service.BoardServiceImpl2" />
+	
+   	
+   	
+   	
+   	<!-- <bean id="ItemDAO" class="soul.item.dao.ItemDaoImpl">
+   		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+   	</bean> -->
+   <!--  	<bean class="soul.main.controller.MainController" />
+    <bean class="soul.board.controller.BoardController" />
+    <bean class="soul.mypage.controller.MypageController" />
+    <bean class="soul.item.controller.ItemController" />
+    <bean class="soul.admin.controller.AdminController" />-->
+    
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	<property name="defaultEncoding" value="UTF-8"/>
+	</bean>
+  	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/> 
+    <bean class="org.springframework.web.servlet.view.BeanNameViewResolver" p:order="0" />
+    <!-- <bean id="jsonView" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView" />     -->
+     							
+   	<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+   		<property name="definitions">
+   			<list>
+   				<value>/WEB-INF/tiles2def/maintiles.xml</value>
+   				<value>/WEB-INF/tiles2def/boardtiles.xml</value>
+   				<value>/WEB-INF/tiles2def/admintiles.xml</value>
+   				<value>/WEB-INF/tiles2def/itemtiles.xml</value>
+   				<value>/WEB-INF/tiles2def/mypagetiles.xml</value>
+   				<value>/WEB-INF/tiles2def/testtiles.xml</value>
+   			</list>
+   		</property>
+   		<property name="preparerFactoryClass" value="org.springframework.web.servlet.view.tiles2.SpringBeanPreparerFactory"/>
+   	</bean>
+	<bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        		<property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView"/>
+    </bean>
+</beans>

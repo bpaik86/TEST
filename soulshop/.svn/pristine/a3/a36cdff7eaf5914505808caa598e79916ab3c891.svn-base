@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+	"http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+	
+<tiles-definitions>
+
+ <definition name="baseLayout" template="/WEB-INF/jsp/layout/layout.jsp">
+
+  <put-attribute name="title" value="SoulShop" />
+
+  <put-attribute name="header" value="/WEB-INF/jsp/layout/header1.jsp" />
+
+  <put-attribute name="body" value="" />
+
+  <put-attribute name="footer" value="/WEB-INF/jsp/layout/footer.jsp" />
+
+ </definition>
+
+ <!--메인 페이지 -->
+ <definition name="main" extends="baseLayout">
+ 
+  <put-attribute name="title" value="SoulShop : Main" />
+  
+  <put-attribute name="body" value="/WEB-INF/jsp/body/main/main.jsp" />
+  
+ </definition>
+ 
+ <!--로그인 페이지 -->
+ <definition name="login" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : Login" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/main/login.jsp" />
+ </definition>
+ 
+ <!-- 로그인 loginSuccess -->
+ <definition name="loginSuccess" extends="baseLayout">
+ 	<put-attribute name="title" value="SoulShop : LoginSuccess" /> 
+ 	<put-attribute name="body" value="/WEB-INF/jsp/body/main/loginSuccess.jsp" />
+ </definition>
+ 
+ <!--이용약관 동의 페이지 -->
+ <definition name="agreement" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : Agreement" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/main/agreement.jsp" />
+ </definition>
+ 
+ <!--회원가입 폼 페이지 -->
+ <definition name="join_form" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : Join_Form" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/main/join_form.jsp" />
+ </definition>
+ 
+ <!-- 회원가입 완료페이지 -->
+ <definition name="join" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : Join" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/main/join.jsp" />
+ </definition>
+ 
+  <!-- 아이디 중복체크 -->
+ <definition name="memberIdCheck" template="/WEB-INF/jsp/body/main/idCk.jsp"> 
+ </definition>
+ 
+ <!-- 우편번호검색 체크 -->
+ <definition name="zipCheck" template="/WEB-INF/jsp/body/main/zipCk.jsp">
+ </definition>
+ 
+ <!--아이디찾기 입력페이지 -->
+ <definition name="find_id" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : Find_id" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/main/find_id.jsp" />
+ </definition>
+ 
+ <!-- 아이디찾기 결과페이지 -->
+ <definition name="memberidfindend" extends="baseLayout">
+  	<put-attribute name="title" value="SoulShop : MemberIdFindend" /> 
+ 	<put-attribute name="body" value="/WEB-INF/jsp/body/main/IDfindOk.jsp"/>
+ </definition>
+ 
+ <!-- 아이디/비밀번호찾기 에러체크(공용) -->
+ <definition name="IDfindError" template="/WEB-INF/jsp/body/main/IDfindError.jsp">
+ </definition>
+ 
+ <!-- 비밀번호찾기 입력페이지 -->
+ <definition name="find_pw" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : Find_pw" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/main/find_pw.jsp" />
+ </definition>
+ 
+ <!-- 비밀번호찾기 결과페이지 -->
+ <definition name="memberpwfindend" extends="baseLayout">
+ 	<put-attribute name="title" value="SoulShop : MemberIdFindend2"/>
+ 	<put-attribute name="body" value="/WEB-INF/jsp/body/main/PWfindOk.jsp"/>
+ </definition>
+ 
+</tiles-definitions>

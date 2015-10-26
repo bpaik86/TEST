@@ -1,0 +1,20 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+	margin: 0;
+	padding: 0;
+}
+ul { list-style: none; }
+a { text-decoration: none; }
+font {
+	
+	color: #000000;
+	font-size: 20px;
+	width:90px;	
+	font-family: 'Nanum Gothic', sans-serif;
+	
+}
+.mainmenu > li {
+    float: left;
+    position: relative;
+ 
+    width:200px;
+}

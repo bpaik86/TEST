@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test">
+	
+	<select id="select" resultType="soul.test.vo.TestVo" parameterType="String">
+		select * from test where username= #{name}
+	</select>
+	<!--체크 박스 장바구니 리스트 가져오기   -->
+	<select id="selectBaket" resultType="soul.test.vo.TestCheckBoxVo" >
+		select * from test_baket
+	</select>
+	<!--멤버리스트 가져오기  -->
+	<select id="selectMemberList" resultType="soul.main.model.Member">
+		select * from shop_member
+	</select>
+	<select id="selectImages" resultType="soul.test.vo.TestImagesVo">
+		select * from images
+	</select>
+	<insert id="insert">
+		insert into test(username,userpassword) values('aaa','bbb')
+	</insert>
+	
+	<insert id="insertarticle" parameterType="soul.test.vo.TestArticleVo">
+		insert into article(articlenum,id,title,content) values(test_article_seq.nextval,#{id},#{title},#{content})
+	</insert>
+	
+	<insert id="insertImages" parameterType="soul.test.vo.TestImagesVo">
+		insert into images(filenum,oriname,filename,filesize,articlenum) values(test_images_seq.nextval,#{oriname},#{filename},#{filesize},test_article_seq.currval)
+	</insert>
+	
+	<!--체크 박스 장바구니 선택된 데이터 지우기  -->
+	<delete id="deleteBaket" parameterType="String">
+		delete test_baket where item_name= #{item_name}
+	</delete>
+	<delete id="deleteMember" parameterType="String">
+		delete shop_member where shop_mem_id= #{shop_mem_id}
+	</delete>
+</mapper>

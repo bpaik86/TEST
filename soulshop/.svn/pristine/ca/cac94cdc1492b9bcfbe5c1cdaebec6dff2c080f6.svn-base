@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board2">
+	
+	<resultMap type="board2" id="board2">
+        <result property="FB_ARTICLE_NO" column="FB_ARTICLE_NO"/>
+        <result property="SHOP_MEM_ID" column="SHOP_MEM_ID"/>
+        <result property="FB_CONTENT" column="FB_CONTENT"/>
+        <result property="FB_READCOUNT" column="FB_READCOUNT"/>
+        <result property="FB_TITLE" column="FB_TITLE"/>
+        <result property="FB_BOARD_TP" column="FB_BOARD_TP"/>
+        <result property="FB_DT" column="FB_DT"/>
+                
+    </resultMap>
+	
+	
+	<select id="selectBoardList2" parameterType="hashmap" resultType="hashmap">
+		<![CDATA[
+			SELECT
+			    FB_ARTICLE_NO,
+			    FB_BOARD_TP,
+			    SHOP_MEM_ID,
+			    FB_TITLE,
+			    FB_READCOUNT,
+			    FB_DT
+			FROM
+			    SHOP_FB
+			ORDER BY FB_ARTICLE_NO DESC
+		]]>
+	</select>
+	
+	<insert id="insertBoard2" parameterType="board2">
+		<![CDATA[
+			INSERT INTO SHOP_FB
+			(
+				FB_ARTICLE_NO,      			                         		
+                SHOP_MEM_ID,
+                FB_BOARD_TP,
+                FB_TITLE,
+                FB_CONTENT,
+                FB_DT
+            )
+			VALUES
+			(
+			SEQ_FB_ARTICLE_NO.NEXTVAL,                            	 	
+             #{SHOP_MEM_ID},
+            #{FB_BOARD_TP},
+            #{FB_TITLE},
+            #{FB_CONTENT},
+            SYSDATE
+			)
+		]]>
+	</insert>
+	
+
+	
+	<select id="selectBoardDetail2" parameterType="hashmap" resultType="hashmap">
+		<![CDATA[
+			SELECT
+				FB_ARTICLE_NO,
+      			SHOP_MEM_ID,                         		
+                FB_TITLE,
+                FB_CONTENT,
+                FB_BOARD_TP
+            FROM
+				SHOP_FB
+			WHERE
+				FB_ARTICLE_NO = #{FB_ARTICLE_NO}		
+		]]>
+	</select>
+	
+	
+	<update id="addRcount" parameterType="hashmap">
+       <![CDATA[        
+          UPDATE SHOP_FB 
+          SET 
+              FB_READCOUNT = FB_READCOUNT + 1 
+          WHERE 
+              FB_ARTICLE_NO = #{FB_ARTICLE_NO}
+       ]]>
+    </update>
+	
+	
+	<update id="updateBoard2" parameterType="hashmap">
+		<![CDATA[
+			UPDATE SHOP_FB
+			SET
+				FB_TITLE = #{FB_TITLE},
+				FB_CONTENT = #{FB_CONTENT},
+				SHOP_MEM_ID = #{SHOP_MEM_ID},
+				FB_BOARD_TP = #{FB_BOARD_TP}
+			WHERE
+				FB_ARTICLE_NO = #{FB_ARTICLE_NO}	
+		]]>
+	</update>
+	
+	<update id="deleteBoard2" parameterType="hashmap">
+		<![CDATA[
+			DELETE 
+			FROM
+				SHOP_FB
+			WHERE
+				FB_ARTICLE_NO = #{FB_ARTICLE_NO}
+		]]>
+	</update>
+</mapper>

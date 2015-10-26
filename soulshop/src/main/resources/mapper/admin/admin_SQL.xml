@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="admin">
+
+	<select id="getAllMembers" resultType="soul.main.model.Member">
+		select * from shop_member
+	</select>
+	
+	<select id="getMemberCount" resultType="Integer">
+		select count(*) from shop_member
+	</select>	
+	<!--배송 관리를 위해 주문 내역을 빼가자 배송 상태를 기준으로  -->
+	<select id="getOrderList" parameterType="String" resultType="soul.mypage.model.OrderVo">
+		select * from orderlist where status = #{status}
+	</select>
+	
+	<update id="changeStatus" parameterType="soul.admin.model.ChangeStatus">
+		update orderlist set status= #{change} where order_no = #{no}
+	</update>
+	
+	
+	<delete id="deleteMember" parameterType="String" >
+		delete shop_member where shop_mem_id = #{id}
+	</delete>
+
+</mapper>

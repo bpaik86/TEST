@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="test1">
+	<!-- 로그인 체크 -->
+	<select id="loginCheck" parameterType="soul.main.model.Member" resultType="soul.main.model.Member">
+		select * from shop_member where shop_mem_id = #{shop_mem_id} 
+	</select>
+	<!-- 회원가입 -->
+	<insert id="insert" parameterType="soul.main.model.Member">
+	
+		insert into shop_member(shop_mem_id, shop_mem_pw, shop_mem_name, shop_mem_bdt, shop_mem_email, 
+		shop_mem_cell, shop_mem_phone, shop_mem_addr1)
+		values(#{shop_mem_id}, #{shop_mem_pw}, #{shop_mem_name}, #{shop_mem_bdt}, #{shop_mem_email}, 
+
+		#{shop_mem_cell}, #{shop_mem_phone}, #{shop_mem_addr1})
+
+
+
+	
+	</insert>	
+	
+	
+	<!-- 아이디중복체크 -->
+	<select id="idCheck" parameterType="String" resultType="soul.main.model.Member">
+
+
+		select * from shop_member where shop_mem_id = #{shop_mem_id}
+		
+	</select>	
+	
+	<!-- 우편번호 체크-->
+	<select id="zipCheckAction" parameterType="soul.main.model.Zipcode" resultType="soul.main.model.Zipcode">
+	
+		select * from shop_zip where area3 LIKE #{area3}
+			
+	</select>
+	
+	<!-- 이름과 이메일로 아이디찾기 -->
+	<select id="idfind" parameterType="soul.main.model.Member" resultType="soul.main.model.Member">
+	
+		select * from shop_member where shop_mem_name = #{shop_mem_name} and shop_mem_email = #{shop_mem_email}
+		  
+	</select>
+	
+	<!-- 이름과 이메일로 비밀번호찾기 -->
+	<select id="pwfind" parameterType="soul.main.model.Member" resultType="soul.main.model.Member">
+	
+		select * from shop_member where shop_mem_name = #{shop_mem_name} and shop_mem_email = #{shop_mem_email}
+		
+	</select>
+ 
+	 <update id="allUpdate" parameterType="soul.main.model.Member">
+	 	update shop_member set
+	 	shop_mem_id=#{shop_mem_id}, shop_mem_pw=#{shop_mem_pw}, 
+	 	shop_mem_name=#{shop_mem_name}, shop_mem_bdt=#{shop_mem_bdt}, 
+	 	shop_mem_email=#{shop_mem_email},shop_mem_cell=#{shop_mem_cell},
+	 	shop_mem_phone=#{shop_mem_phone}, shop_mem_addr1=#{shop_mem_addr1}
+	 	
+	 	where shop_mem_id = #{shop_mem_id}
+	 </update>
+</mapper>

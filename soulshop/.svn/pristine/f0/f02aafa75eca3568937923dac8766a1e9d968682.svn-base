@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="photo">
+
+<select id="phoselectBoardList" parameterType="hashmap" resultType="hashmap">
+	
+		select s.IDX, s.TITLE, s.HIT_CNT, s.CREA_DTM, s.CONTENTS, i.ORIGINAL_FILE_NAME, i.STORED_FILE_NAME, ROUND(i.FILE_SIZE/1024,1) AS FILE_SIZE
+from SHOP_IMG s inner join  IMG_PHOTO_FILE i on s.idx = i.board_idx
+where s.DEL_GB = 'N' 
+ORDER BY s.IDX DESC
+		
+	</select>
+	
+	<insert id="phoinsertBoard" parameterType="hashmap" useGeneratedKeys="true" keyProperty="IDX">
+		<selectKey keyProperty="IDX" resultType="string" order="BEFORE">
+			SELECT SEQ_SHOP_IMG_IDX.NEXTVAL FROM DUAL
+		</selectKey>
+		<![CDATA[
+			
+			INSERT INTO SHOP_IMG
+			(
+				IDX,
+			    TITLE, 
+			    CONTENTS, 
+			    HIT_CNT, 
+			    DEL_GB, 
+			    CREA_DTM, 
+			    CREA_ID
+			)
+			VALUES
+			(
+				#{IDX}, 
+			    #{TITLE}, 
+			    #{CONTENTS}, 
+			    0, 
+			    'N', 
+			    SYSDATE, 
+			    'Admin'
+			)
+		]]>
+	</insert>
+	
+	<update id="phoupdateHit" parameterType="hashmap">
+		<![CDATA[
+			UPDATE SHOP_IMG 
+			SET
+				HIT_CNT = NVL(HIT_CNT, 0) + 1
+			WHERE
+				IDX = #{IDX}	
+		]]>
+	</update>
+	
+	<select id="phoselectBoardDetail" parameterType="hashmap" resultType="hashmap">
+		<![CDATA[
+			SELECT
+				IDX,
+				HIT_CNT,
+				CREA_ID,
+				CREA_DTM,
+				TITLE,
+				CONTENTS
+			FROM
+				SHOP_IMG
+			WHERE
+				IDX = #{IDX}		
+		]]>
+	</select>
+	
+	<update id="phoupdateBoard" parameterType="hashmap">
+		<![CDATA[
+			UPDATE SHOP_IMG 
+			SET
+				TITLE = #{TITLE},
+				CONTENTS = #{CONTENTS}
+			WHERE
+				IDX = #{IDX}	
+		]]>
+	</update>
+	
+	<update id="phodeleteBoard" parameterType="hashmap">
+		<![CDATA[
+			UPDATE SHOP_IMG
+			SET
+				DEL_GB = 'Y'
+			WHERE
+				IDX = #{IDX}
+		]]>
+	</update>
+	
+	<insert id="phoinsertFile" parameterType="hashmap">
+		<![CDATA[
+			INSERT INTO IMG_PHOTO_FILE
+			(
+				IDX,
+				BOARD_IDX,
+				ORIGINAL_FILE_NAME,
+				STORED_FILE_NAME,
+				FILE_SIZE,
+				CREA_ID
+			)
+			VALUES
+			(
+				SEQ_IMG_FILE_IDX.NEXTVAL,
+				#{BOARD_IDX},
+				#{ORIGINAL_FILE_NAME},
+				#{STORED_FILE_NAME},
+				#{FILE_SIZE},
+				'Admin'
+			)
+		]]>
+	</insert>
+	
+	<select id="phoselectFileList" parameterType="hashmap" resultType="hashmap">
+		<![CDATA[
+			SELECT
+			    IDX,
+			    ORIGINAL_FILE_NAME,
+			    STORED_FILE_NAME,
+			    ROUND(FILE_SIZE/1024,1) AS FILE_SIZE
+			FROM
+			    IMG_PHOTO_FILE
+			WHERE
+			    BOARD_IDX = #{IDX}
+			    AND DEL_GB = 'N'
+		]]>
+	</select>
+	
+	<update id="phodeleteFileList" parameterType="hashmap">
+		<![CDATA[
+			UPDATE IMG_PHOTO_FILE SET 
+				DEL_GB = 'Y' 
+			WHERE 
+				BOARD_IDX = #{IDX}	
+		]]>
+	</update>
+	
+	<update id="phoupdateFile" parameterType="hashmap">
+		<![CDATA[
+			UPDATE IMG_PHOTO_FILE SET
+				DEL_GB = 'N'
+			WHERE
+				IDX = #{FILE_IDX}	
+		]]>
+	</update>
+</mapper>

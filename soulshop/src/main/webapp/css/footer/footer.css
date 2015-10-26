@@ -1,0 +1,815 @@
+@import url(//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900);
+
+
+
+.goodPic .heart { position:absolute;right:5px;top:11px; display:none; }
+.goodPic .question { position:absolute;right:0px;top:35px; display:none; }
+.heart:hover {cursor:pointer}
+.heart:hover .question {display:block}
+.goodPic:hover .heart {display:block}
+
+.strike {text-decoration: line-through;}
+
+/* 포토후기 썸네일 */
+.postscript_thumb {max-width: 100%;}
+
+/* 카테고리 베스트 큰 썸네일 텍스트 영역 컨트롤 */
+.bigbest_wrap { height:auto; cursor:pointer; cursor:hand;}
+.bigbest_wrap .image{overflow:hidden;}
+.bigetc{position: absolute; bottom: 0px; left: 0px; width: 100%; height: auto; text-align:center; background:url(/images_2015/main/opacity.png) repeat;}
+.bigetcwrap{padding-top:0%; margin-top:0px; overflow:hidden;  height: 100%;}
+.bigetc span.dsctxt{display:block;color:#fff; font-size:14px; line-height:15px; padding: 15 5 5 5px;}
+.bigetc span.dsc{display:block;color:#fff; font-size:14px; line-height:15px; padding: 0 5 3 5px;}
+.bigetc span.price{display:block;color:#fff; font-size:14px;line-height:15px; padding: 0 5 15 5px; font-weight:bold;}
+/* 카테고리 베스트 큰 썸네일 텍스트 영역 컨트롤 */
+
+/* 카테고리 베스트 중간 썸네일 텍스트 영역 컨트롤 */
+.best_wrap { height:auto; cursor:pointer; cursor:hand;}
+.best_wrap .image{overflow:hidden;}
+.etc{position: absolute; bottom: 0px; left: 0px; width: 100%; height: auto; text-align:center; background:url(/images_2015/main/opacity.png) repeat;}
+.etcwrap{padding-top:0%; margin-top:0px; overflow:hidden;  height: 100%;}
+.etc span.dsctxt{display:block;color:#fff; font-size:12px; line-height:15px; padding: 10 5 5 5px;}
+.etc span.dsc{display:block;color:#fff; font-size:12px; line-height:15px; padding: 0 5 3 5px;}
+.etc span.price{display:block;color:#fff; font-size:12px;line-height:15px; padding: 0 5 10 5px; font-weight:bold;}
+/* 카테고리 베스트 중간 썸네일 텍스트 영역 컨트롤 */
+
+/* Skinset Core Colors */
+div,table,td,p,form { font-family:'돋움',sans-serif; color:#222222;font-size:12px;letter-spacing:0pt; }
+table img { vertical-align: middle; }
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+.alertmessage {
+	color: #f92b82;
+}
+
+/* Text Links */
+
+
+a:link  { color: #222222; text-decoration: none}
+a:visited { color: #222222; text-decoration: none}
+a:hover { color: #999999; text-decoration: none}
+
+
+
+/* 2015 다홍 폰트 설정 */
+
+.redbutton {
+-webkit-border-radius: 3px;
+border: 1px solid #cb7d95;
+background: #B50938 url(/images_2015/bg/grad-red.20141217162221.jpg) repeat-x left center;
+font-family: Verdana,Arial,sans;
+cursor: pointer;
+color: #fff;
+}
+
+
+
+/* 테스트 텍스트 */
+.zt05
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 13px;
+	color: #222222;
+	font-weight:700;
+	letter-spacing: 1pt;
+
+}
+
+.zt055
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	color: #222222;
+	font-weight:600;
+	letter-spacing: 1pt;
+
+}
+
+.zt0555
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 13px;
+	color: #222222;
+	font-weight:700;
+	letter-spacing: 1pt;
+
+}
+
+.zt06
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	color: #FFFFFF;
+	font-weight:800;
+	letter-spacing: 2pt;
+
+
+}
+
+.zt07
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	color: #222222;
+	font-weight:800;
+	letter-spacing: 2pt;
+
+
+}
+
+.zt077
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	color: #222222;
+	font-weight:700;
+	letter-spacing: 1pt;
+
+
+}
+/* --------------------------------------------- TOP --------------------------------------------------------------- */
+
+.top01
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 13px;
+	color: #222222;
+	font-weight:500;
+	letter-spacing: 0.5pt;
+
+}
+
+.top02
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 13px;
+	color: #222222;
+	font-weight:700;
+	letter-spacing: 1pt;
+
+}
+
+.top03
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	color: #222222;
+	font-weight:500;
+	letter-spacing: 0.5pt;
+
+}
+
+.top04
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 13px;
+	color: #000000;
+	font-weight:400;
+	letter-spacing: normal;
+}
+
+.top05
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	color: #222222;
+	font-weight:700;
+	letter-spacing: 0.5pt;
+
+}
+
+.top06
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 34px;
+	color: #FF0066;
+	font-weight:600;
+	letter-spacing: 0.5pt;
+
+}
+
+.top07
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	color: #222222;
+	font-weight:400;
+	letter-spacing: 0.5pt;
+
+}
+
+/* --------------------------------------------- TOP --------------------------------------------------------------- */
+
+
+
+
+
+
+
+/* --------------------------------------------- BOTTOM ------------------------------------------------------------ */
+
+.bottom01
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	color: #999999;
+	font-weight:500;
+	letter-spacing: 0pt;
+
+}
+
+.bottom02
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	color: #999999;
+	font-weight:500;
+	letter-spacing: 0pt;
+
+}
+
+.bottom03
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 28px;
+	color: #FFFFFF;
+	font-weight:400;
+	letter-spacing: 0pt;
+
+}
+
+.bottom04
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 13px;
+	color: #FFFFFF;
+	font-weight:600;
+	letter-spacing: 0pt;
+
+}
+
+/* --------------------------------------------- BOTTOM ------------------------------------------------------------ */
+
+
+
+
+
+/* --------------------------------------------- 관심상품리스트 ---------------------------------------------------- */
+
+.zzim01
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	color: #222222;
+	font-weight:400;
+	letter-spacing: 0pt;
+
+}
+
+.zzim02
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	color: #222222;
+	font-weight:400;
+	letter-spacing: 0pt;
+
+}
+
+
+/* --------------------------------------------- 관심상품리스트 ---------------------------------------------------- */
+
+
+
+
+
+.zt09
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	color: #222222;
+	font-weight:400;
+	letter-spacing: 1pt;
+}
+
+.zt10
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	color: #222222;
+	font-weight:800;
+	letter-spacing: 1pt;
+}
+
+.zt11
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	color: #444444;
+	font-weight:800;
+	letter-spacing: 2pt;
+}
+
+
+.zt12
+{
+    font-family: 'Roboto',Arial,sans-serif;
+	font-size: 11px;
+    color: #222222;
+	font-weight:400;
+	letter-spacing: 0.05em;
+
+}
+
+
+
+.zt13
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	color: #F2F2F2;
+	font-weight:500;
+	letter-spacing: 0.5pt;
+
+}
+
+.zt14
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 13px;
+	color: #222222;
+	font-weight:500;
+	letter-spacing: 0.5pt;
+
+}
+
+.zt144
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	color: #222222;
+	font-weight:700;
+	letter-spacing: 0.5pt;
+
+}
+
+.zt1444
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	color: #222222;
+	font-weight:500;
+	letter-spacing: 0.5pt;
+
+}
+
+.zt15
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 13px;
+	color: #000000;
+	font-weight:400;
+	letter-spacing: normal;
+}
+
+.zt16
+{
+    font-family: 'Roboto',Arial,sans-serif;
+	font-size: 12px;
+    color: #ffffff;
+	font-weight:400;
+	letter-spacing: 0.05em;
+
+}
+
+.zt17
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+	color: #222222;
+	font-weight:bold;
+	letter-spacing: 1pt;
+}
+
+.zt18
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 11px;
+	color: #8B8B8B;
+	letter-spacing: 1pt;
+}
+
+
+.zt19
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 11px;
+	color: #000000;
+	font-weight:bold;
+	letter-spacing: 0pt;
+
+}
+
+
+
+
+.zt20 
+{
+	font-size: 11px;
+	color: #6e6e6e;
+	
+}
+
+
+
+.zt21
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	color: #222222;
+	font-weight:bold;
+	letter-spacing: 0pt;
+
+}
+
+
+.zt22
+{
+    font-family: 'Roboto', sans-serif;
+	font-size: 11px;
+	color: #222222;
+	letter-spacing: 0pt;
+
+}
+
+
+.m_title10 
+{
+	font-size: 12px;
+	color: #000000;
+}
+
+
+.m_title31 
+{
+	font-size: 11px;
+	color: #6e6e6e;
+	
+}
+
+
+.m_title32 
+{
+	font-size: 12px;
+	color: #666666;
+	font-weight: bold;
+}
+
+
+
+
+/* 버튼 */
+
+
+
+
+
+.z_button_01
+{
+	width:95%;
+	text-decoration:none;
+	text-align:center;
+	display:block;
+	padding:10px 0;
+	background-color: #D3D4D4; 
+	background: -webkit-gradient(linear, left top, left bottom, from(#F7F8F8), color-stop(49%, #EEEEEE), color-stop(51%, #DBDBDB), to(#CECFCF));
+	background: -moz-linear-gradient(#F7F8F8, #EEEEEE, #DBDBDB, #CECFCF);
+	border:solid 1px #626262;
+	border-radius: 10px;
+}
+
+
+
+.z_button_02
+{
+	width:100%;
+	text-decoration:none;
+	text-align:center;
+	display:block;
+	padding:13px 0;
+	background-color: #222222; 
+	border:solid 1px #222222;
+	border-radius: 0px;
+}
+
+.z_button_03
+{
+	width:100%;
+	text-decoration:none;
+	text-align:center;
+	display:block;
+	padding:13px 0;
+	background-color: #FFFFFF; 
+	border:solid 1px #cccccc;
+	border-radius: 0px;
+}
+
+.z_button_05
+{
+	width:100%;
+	text-decoration:none;
+	text-align:center;
+	display:block;
+	padding:15px 0;
+	background-color: #ffffff; 
+	border:solid 1px #b7b7b7;
+
+}
+
+
+
+.z_button_06
+{
+	width:100%;
+	text-decoration:none;
+	text-align:center;
+	display:block;
+	padding:10px 0;
+	background-color: #ffffff; 
+	border:solid 1px #626262;
+	border-radius: 40px;
+}
+
+
+
+.z_button_07
+{
+	width:100%;
+	text-decoration:none;
+	text-align:center;
+	display:block;
+	padding:7px 0;
+	background-color: #000000; 
+	border:solid 1px #000000;
+	border-radius: 0px;
+}
+
+
+
+.z_button_08
+{
+	width:100%;
+	text-decoration:none;
+	text-align:center;
+	display:block;
+	padding:6px 0;
+	background-color: #ededed; 
+	border-radius: 10px;
+}
+
+
+
+.button-wm16
+{
+	width:100%;
+	text-decoration:none;
+	text-align:center;
+	display:block;
+	padding:6px 0;
+	background-color: #ffffff; 
+	border:solid 1px #999999;
+	border-radius: 0px;
+}
+
+.button-wm161
+{
+	width:100%;
+	text-decoration:none;
+	text-align:center;
+	display:block;
+	padding:10px 0;
+	background-color: #ffffff; 
+	border:solid 1px #999999;
+	border-radius: 0px;
+}
+
+.button-wm162
+{
+	width:100%;
+	text-decoration:none;
+	text-align:center;
+	display:block;
+	padding:6px 0;
+	background-color: #efefef; 
+	border:solid 1px #999999;
+	border-radius: 0px;
+}
+
+
+
+.button-wm22
+{
+	width:100%;
+	text-decoration:none;
+	text-align:center;
+	display:block;
+	padding:10px 0;
+	background-color: #e66f93; 
+	border-radius: 10px;
+}
+
+
+
+
+/* 폰트 바뀜으로 인해 12픽셀에서 11로 변경 */
+.t00 
+{
+	font-size: 14px;
+	color: #000000;
+}
+.t01 
+{
+	font-size: 11px;
+	color: #000000;
+}
+
+/* 폰트 바뀜으로 인해 14픽셀에서 13로 변경 */
+.t02 
+{
+	font-size: 13px;
+	color: #000000;
+}
+
+/* 폰트 바뀜으로 인해 16픽셀에서 15로 변경 */
+.t03 
+{
+	font-size:15px;
+	color: #000000;
+	line-height: 20px;
+	letter-spacing: none; 
+}
+
+.t04 
+{
+	font-size:11px;
+	line-height: 13px;
+	letter-spacing:-0.2pt; 
+}
+
+/* 폰트 바뀜으로 인해 20픽셀에서 19로 변경 */
+.t05 
+{
+	font-size:19px;
+	color: #000000;
+	font-weight: bold;
+	line-height: 20px;
+	letter-spacing: 1pt; 
+}
+
+/* 폰트 바뀜으로 인해 12픽셀에서 11로 변경 */
+.t06 
+{
+	font-size: 11px;
+	color: #666666;
+	font-weight: bold;
+	line-height: 20px;
+	letter-spacing: 0pt; 
+}
+
+/* 폰트 바뀜으로 인해 12픽셀에서 11로 변경 */
+.t07 
+{
+	font-size: 11px;
+	color: #666666;
+	line-height: 20px;
+	letter-spacing: 0pt; 
+}
+
+
+/* 폰트 바뀜으로 인해 12픽셀에서 11로 변경 */
+.t08 
+{
+	font-size: 11px;
+	color: #333333;
+	line-height: 20px;
+	letter-spacing: 0pt; 
+}
+
+/* 폰트 바뀜으로 인해 12픽셀에서 11로 변경 */
+.t09 
+{
+	font-size: 11px;
+	color: #787878;
+	letter-spacing: -0.1pt; 
+}
+
+/* 폰트 바뀜으로 인해 12픽셀에서 11로 변경 */
+.t10 
+{
+	font-size: 11px;
+	color: #333333;
+	letter-spacing: -0.2pt; 
+}
+/* 폰트 바뀜으로 인해 12픽셀에서 11로 변경 */
+.t11 
+{
+	font-size: 11px;
+	letter-spacing: -0.2pt; 
+}
+
+/* 폰트 바뀜으로 인해 12픽셀에서 11로 변경 */
+.t12 
+{
+	font-size: 11px;
+	color: #666666;
+	letter-spacing: -0.2pt; 
+}
+/* 폰트 바뀜으로 인해 12픽셀에서 11로 변경 */
+.t13 
+{
+	font-size: 12px;
+	color: #333333;
+	line-height: 17px;
+	letter-spacing: -0.1pt; 
+}
+
+/* 폰트 바뀜으로 인해 14픽셀에서 13로 변경 */
+.t15 
+{
+	font-size: 13px;
+	color: #333333;
+	line-height: 17px;
+	letter-spacing: -0.2pt; 
+}
+
+.t16 
+{
+	font-size: 12px;
+	color: #333333;
+	line-height: 17px;
+	letter-spacing: -0.2pt; 
+}
+
+.t17 
+{
+	font-size: 20px;
+	color: #333333;
+	line-height: 25px;
+	letter-spacing: -0.2pt; 
+}
+
+
+
+.inputtext
+{ 
+	color:#616161;
+	font-family:"verdana";
+	font-size:12px;
+	border: 1px solid #d9d9d9;
+	
+}
+
+/* --------------------------------------------- 우편번호 검색 버튼 지우지 말것 --------------------------------------------------------------- */
+
+.zipcode_up
+{
+	width:100%;
+	height:36px;
+	text-decoration:none;
+	text-align:center;
+	font-size: 12px;
+	color: #ffffff;
+	font-weight: bold;
+	display:block;
+	background-color: #333333; 
+/*	background: -webkit-gradient(linear, left top, left bottom, from(#333333),  to(#333333));*/
+/*	background: -moz-linear-gradient(#F7F8F8, #EEEEEE, #DBDBDB, #CECFCF);*/
+	border:solid 1px #333333;
+	border-radius: 0px;
+}
+
+.zipcode_down
+{
+	width:100%;
+	height:36px;
+	text-align:center;
+	font-size: 12px;
+	color: #222222;
+	display:block;
+	background-color: #ffffff; 
+/*	background: -webkit-gradient(linear, left top, left bottom, from(#ffffff),  to(#ffffff));*/
+/*	background: -moz-linear-gradient(#F7F8F8, #EEEEEE, #DBDBDB, #CECFCF);*/
+	border:solid 1px #b7b7b7;
+	border-radius: 0px;
+}
+
+/* --------------------------------------------- 우편번호 검색 버튼 지우지 말것 --------------------------------------------------------------- */
+
+/* table */
+/* table img { vertical-align: middle; }*/

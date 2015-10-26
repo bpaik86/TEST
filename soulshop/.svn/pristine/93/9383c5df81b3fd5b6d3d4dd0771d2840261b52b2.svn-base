@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mypage">
+	
+	<select id="getBasketList" resultType="soul.mypage.model.BasketVo" parameterType="String">
+		select * from basket where mem_id = #{mem_id}
+	</select>
+	
+	<select id="getBasket" resultType="soul.mypage.model.BasketVo" parameterType="Integer">
+		select * from basket where basket_no = #{basket_no}
+	</select>
+	
+	<select id="getMainImg" resultType="String" parameterType="Integer">
+		select filename from shop_item_img where item_id = #{item_id} and filenum ='mainImg'
+	</select>
+	
+	<select id="getOrderList" parameterType="String" resultType="soul.mypage.model.OrderVo">
+		select * from orderlist where mem_id = #{shop_mem_id}
+	</select>
+	<insert id="insertBasketItem" parameterType="soul.mypage.model.BasketVo">
+		INSERT INTO "IOT0107"."BASKET" (BASKET_NO, MEM_ID, ITEM_PRICE, ITEM_NAME, ITEM_DATE, ITEM_OP1, ITEM_OP2, ITEM_COUNT, ITEM_ID )
+		 VALUES  (seq_basket.nextval,#{mem_id},#{item_price},#{item_name},sysdate,#{item_op1},#{item_op2},#{item_count},#{item_id}  )
+	</insert>
+	
+	<!--주문내역서 인서트  -->
+	<insert id="insertOrderList" parameterType="soul.mypage.model.OrderVo">
+		INSERT INTO ORDERLIST (ORDER_NO, MEM_ID, ITEM_ID, ITEM_NAME, ITEM_COUNT, TOTAL_PRICE, ORDER_DATE, RECEIVER_NAME, RECEIVER_ADDR, RECEIVER_PHONE ) 
+		VALUES  ( seq_orderlist.nextval,#{mem_id}, #{item_id}, #{item_name},#{item_count} ,#{total_price} , sysdate, #{receiver_name},#{receiver_addr} , #{receiver_phone} )
+	</insert>
+					
+	
+	<update id="subItemCount" parameterType="soul.mypage.model.BasketVo">
+		update shop_item set item_amt= item_amt-#{item_count} where item_id = #{item_id}
+	</update>
+	<delete id="deleteBasketItem" parameterType="Integer">
+		delete basket where basket_no = #{basket_no}
+	</delete>
+	
+
+</mapper>

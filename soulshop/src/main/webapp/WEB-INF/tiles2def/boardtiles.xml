@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+	"http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+	
+<tiles-definitions>
+
+ <!--FAQ 페이지 -->
+ <definition name="faq" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : FAQ" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/board/faq.jsp" />
+ </definition>
+ 
+ <!--FAQ_VIEW 페이지 -->
+ <definition name="faq_view" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : FAQ_VIEW" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/board/faq_view.jsp" />
+ </definition>
+ 
+ <!--FAQ_INSERT 페이지 -->
+ <definition name="faq_insert" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : FAQ_INSERT" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/board/faq_insert.jsp" />
+ </definition>
+ 
+ <!--FAQ_MODIFY 페이지 -->
+ <definition name="faq_modify" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : FAQ_MODIFY" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/board/faq_modify.jsp" />
+ </definition>
+
+<!--QNA 페이지 -->
+ <definition name="qna" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : QNA" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/board/qna.jsp" />
+ </definition>
+ 
+ <!--QNA_VIEW 페이지 -->
+ <definition name="qna_view" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : QNA_VIEW" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/board/qna_view.jsp" />
+ </definition>
+ 
+ <!--QNA_INSERT 페이지 -->
+ <definition name="qna_insert" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : QNA_INSERT" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/board/qna_insert.jsp" />
+ </definition>
+ 
+ <!--QNA_MODIFY 페이지 -->
+ <definition name="qna_modify" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : QNA_MODIFY" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/board/qna_modify.jsp" />
+ </definition>
+ 
+ <!--QNA_REPLY 페이지 -->
+ <definition name="qna_reply" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : QNA_REPLY" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/board/qna_reply.jsp" />
+ </definition>
+ 
+ <!--PHOTOZONE 페이지 -->
+ <definition name="photozone" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : PHOTOZONE" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/board/photozone.jsp" />
+ </definition>
+ 
+ <!--Photo_VIEW 페이지 -->
+ <definition name="photo_view" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : PHOTO_VIEW" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/board/photo_view.jsp" />
+ </definition>
+ 
+ <!--Photo_INSERT 페이지 -->
+ <definition name="photo_insert" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : PHOTO_INSERT" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/board/photo_insert.jsp" />
+ </definition>
+ 
+ <!--Photo_MODIFY 페이지 -->
+ <definition name="photo_modify" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : PHOTO_MODIFY" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/board/photo_modify.jsp" />
+ </definition>
+</tiles-definitions>

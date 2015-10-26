@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+	"http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+	
+<tiles-definitions>
+
+ <!--MYPAGE 페이지 -->
+ <definition name="write_test" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : MYPAGE" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/test/write_test.jsp" />
+ </definition>
+ 
+ <!--MYPAGE_MODIFY 페이지 -->
+ <definition name="result_test" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : MYPAGE_MODIFY" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/test/result_test.jsp" />
+ </definition>
+ 
+ <definition name="checkBox_test" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : MYPAGE_MODIFY" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/test/checkBox_test.jsp" />
+ </definition>
+ 
+  <definition name="membermanage_test" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : MYPAGE_MODIFY" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/test/membermanage_test.jsp" />
+ </definition>
+ 
+ <definition name="showImages_test" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : MYPAGE_MODIFY" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/test/showImages_test.jsp" />
+ </definition>
+  <definition name="jQuery" extends="baseLayout">
+  <put-attribute name="title" value="SoulShop : MYPAGE_MODIFY" /> 
+  <put-attribute name="body" value="/WEB-INF/jsp/body/test/jQuery_test.jsp" />
+ </definition>
+</tiles-definitions>

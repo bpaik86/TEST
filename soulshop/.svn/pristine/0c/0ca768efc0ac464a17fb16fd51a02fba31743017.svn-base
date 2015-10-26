@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="item">
+	<select id="item_List" resultType="soul.item.vo.ItemVO" parameterType="String">
+		select * from shop_item
+	</select>
+	
+	<select id="item_View" resultType="soul.item.vo.ItemVO" parameterType="String">
+		select * from shop_item where ITEM_ID=#{ITEM_ID} 
+	</select>
+	<select id="list_cate" resultType="soul.item.vo.ItemVO" parameterType="String">
+		select * from shop_item where ITEM_CATE LIKE '%'||#{cat}||'%'
+	</select>
+	
+	<select id="searchItem" resultType="soul.item.vo.ItemVO" parameterType="String">
+		select * from shop_item where ITEM_TITLE LIKE '%'||#{title}||'%'
+	</select>
+	
+	<insert id="item_Add" parameterType="soul.item.vo.ItemVO" >
+		insert into shop_item values(SEQ_ITEM_ID.NEXTVAL,#{ITEM_CATE},#{ITEM_TITLE},#{ITEM_STITLE},#{ITEM_PRICE},#{ITEM_OP1},#{ITEM_OP2},#{ITEM_AMT},#{ITEM_MAKE},#{ITEM_MAIN})
+	</insert>
+	<update id="item_Main" parameterType="soul.item.vo.ItemVO">
+		<![CDATA[
+		update SHOP_ITEM  set ITEM_MAIN=(select FILENAME FROM SHOP_ITEM_IMG where FILENUM=#{mainImg} and ITEM_ID=(SELECT * FROM(SELECT ITEM_ID FROM SHOP_ITEM ORDER BY ITEM_ID DESC)  WHERE ROWNUM = 1)) where ITEM_ID=(SELECT * FROM(SELECT ITEM_ID FROM SHOP_ITEM ORDER BY ITEM_ID DESC)  WHERE ROWNUM = 1)
+		]]>
+	</update>
+	<insert id="item_img" parameterType="soul.item.vo.ItemImgVO">
+		insert into shop_item_img(FILENUM,ORINAME,FILENAME,FILESIZE,ITEM_ID) values(#{FILENUM},#{ORINAME},#{FILENAME},#{FILESIZE},SEQ_ITEM_ID.CURRVAL)
+	</insert>
+	
+	<select id="img_View" resultType="soul.item.vo.ItemImgVO">
+		select * from shop_item_img where ITEM_ID=#{ITEM_ID}
+	</select>
+	
+</mapper>
